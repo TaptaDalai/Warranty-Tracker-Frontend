@@ -54,16 +54,16 @@ export class RegisterComponent {
     return this.registerForm.get("firstname") as FormControl;
   }
   get LastName(): FormControl {
-    return this.registerForm.get("firstname") as FormControl;
+    return this.registerForm.get("lastname") as FormControl;
   }
   get Email(): FormControl {
-    return this.registerForm.get("firstname") as FormControl;
+    return this.registerForm.get("email") as FormControl;
   }
   get Mobile(): FormControl {
-    return this.registerForm.get("firstname") as FormControl;
+    return this.registerForm.get("mobile") as FormControl;
   }
   get PWD(): FormControl {
-    return this.registerForm.get("firstname") as FormControl;
+    return this.registerForm.get("pwd") as FormControl;
   }
 
 }
