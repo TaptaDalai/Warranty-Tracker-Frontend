@@ -26,7 +26,9 @@ export class RegisterComponent {
       Validators.pattern("[ a-zA-Z].*")
     ]),
     email: new FormControl("", [Validators.required,
-      Validators.email]),
+      // Validators.email,
+      Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,3}$"),
+    ]),
     mobile: new FormControl("", [
       Validators.required,
       Validators.pattern("[0-9]*"),
@@ -43,13 +45,19 @@ export class RegisterComponent {
   });
 
   registerSubmited() {
-    if (this.PWD.value == this.RPWD.value) {
+    
+    console.log(this.registerForm.value);
+    if (this.registerForm.value.pwd == this.registerForm.value.rpwd) {
+      //console.log("enterd if");
       console.log(this.registerForm.invalid);
       this.repeatPass = "none"
     } else {
+      //console.log("enterd else");
       this.repeatPass = "inline"
+
     }
   }
+
   get FirstName(): FormControl {
     return this.registerForm.get("firstname") as FormControl;
   }
