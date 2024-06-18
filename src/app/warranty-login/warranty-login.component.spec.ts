@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DocumentStorageComponent } from './document-storage.component';
+import { WarrantyLoginComponent } from './warranty-login.component';
 
-describe('DocumentStorageComponent', () => {
-  let component: DocumentStorageComponent;
-  let fixture: ComponentFixture<DocumentStorageComponent>;
+describe('WarrantyLoginComponent', () => {
+  let component: WarrantyLoginComponent;
+  let fixture: ComponentFixture<WarrantyLoginComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [DocumentStorageComponent]
+      declarations: [WarrantyLoginComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(DocumentStorageComponent);
+    fixture = TestBed.createComponent(WarrantyLoginComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

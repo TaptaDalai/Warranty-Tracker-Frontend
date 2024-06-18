@@ -1,4 +1,4 @@
-<form [formGroup]="registerForm" (ngSubmit)="registerSubmited" class="border p-3 rounded-3">
+<form [formGroup]="registerForm" (ngSubmit)="registerSubmited()" class="border p-3 rounded-3">
     <div class="row g-o">
         <div class="col text center p-2 mb-3 bg-light">
             <div class="text-center">
@@ -15,7 +15,7 @@
 
  <div class="form-text text-danger" *ngIf="FirstName.errors?.['required']
               && (FirstName.touched || FirstName.dirty)">
-              
+              first name is required.
 
       </div> 
    
@@ -60,9 +60,8 @@
         && (Email.dirty || Email.touched)">
     Email is Required.
 </div>
-
-<div class="form-text text-danger" *ngIf="Email.errors?.['email']
-        && (Email.dirty || Email.touched)">
+<div class="form-text text-danger" *ngIf="Email.errors?.['pattern'] && Email.invalid
+    && (Email.dirty || Email.touched)">
    Email is Invalid
 </div>
 </div>
@@ -103,18 +102,22 @@
     </div>
     <div class="col mb-3">
         <label for="rpwd" class="form-label">Repeat Password</label>
-        <input type="password" class="form-control" id="Pwd" formControlName="rpwd">
+        <input type="password" class="form-control" id="rPwd" formControlName="rpwd">
         <div class="form-text text-danger" [ngStyle]="{'display':repeatPass}">
-            repeat pass is Invalid.
-     </div>   
+            repeat pass is Invalid. 
+        <!-- </div> -->
+        <!-- <div class="form-text text-danger" *ngIf="registerForm.controls['rpwd'].value !== registerForm.controls['pwd'].value">
+            Passwords do not match.
+        </div> -->
     </div>
+    </div> 
     </div>
     <div class="row">
         <div class="col-6 offset-3">
             <div class="d-grid">
-                <button type="submit" [disabled]="registerForm.invalid" class="btn btn-primary">Submit</button>
+                <button  type="submit" class="btn btn-primary"  [disabled]="registerForm.invalid" >Submit</button>
             </div>
         </div>
         </div>
-    
+        <!--(ngSubmit)="registerSubmited" type="submit" [disabled]="registerForm.invalid" (click)="registerSubmited()" -->
 </form>
