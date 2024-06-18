@@ -2,8 +2,12 @@
 <div class="container">
       <h1 style="text-align: center;">Welcome To Warranty Application</h1>
       <h3>Enter your login credentials</h3>
-      <form [formGroup]="loginForm" (ngSubmit)="submit()">
-            <input type="text" formControlName="username" placeholder="Username" required>
+      <form [formGroup]="userForm" (ngSubmit)="submit()">
+            <input type="text" formControlName="userName" placeholder="Username" required>
+            <div class="text-danger" *ngIf="userForm.controls['userName'].touched"> 
+                  Looks good
+
+            </div>
       
             <input type="password" formControlName="password" placeholder="Password" required>
             <button [disabled]="loginForm.invalid">Login</button>
