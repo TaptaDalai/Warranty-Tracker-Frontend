@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
-const routes: Routes = [];
+import { WarrantyLoginComponent } from './warranty-login/warranty-login.component';
+const routes: Routes = [ {path:"", redirectTo:"warranty-login", pathMatch:"full"},
+{path:"warranty-login", component:WarrantyLoginComponent},];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
