@@ -1,123 +1,124 @@
 <form [formGroup]="registerForm" (ngSubmit)="registerSubmited()" class="border p-3 rounded-3">
+   
     <div class="row g-o">
         <div class="col text center p-2 mb-3 bg-light">
-            <div class="text-center">
+            <!-- <div class="text-center"> -->
                 <span class="fs-3"><b>REGISTER</b></span>
-            </div>
             
-        </div>
+
+
+     </div>
+     
     </div>
     <div class="row">
         <div class="col mb-3">
             <label for="firstname" class="form-label">First Name</label>
-           <input type="text" class="form-control" id="firstname" 
-           formControlName="firstname">
+            <input type="text" class="form-control" id="firstname" placeholder=" Enter your FirstName"    formControlName="firstname">
 
- <div class="form-text text-danger" *ngIf="FirstName.errors?.['required']
+            <div class="form-text text-danger" *ngIf="FirstName.errors?.['required']
               && (FirstName.touched || FirstName.dirty)">
-              first name is required.
+                first name is required.
 
-      </div> 
-   
-      <div class="form-text text-danger" *ngIf="FirstName.errors?.['minlength']
+            </div>
+
+            <div class="form-text text-danger" *ngIf="FirstName.errors?.['minlength']
               && (FirstName.touched || FirstName.dirty)">
-          First Name is too short
-      </div>
+                First Name is too short
+            </div>
 
-      <div class="form-text text-danger" *ngIf="FirstName.errors?.['pattern']
+            <div class="form-text text-danger" *ngIf="FirstName.errors?.['pattern']
               && (FirstName.dirty || FirstName.touched)">
-          First character should be alphabet
-      </div>
+                First character should be alphabet
+            </div>
         </div>
-        
+
         <div class="col mb-3">
             <label for="lastname" class="form-label">Last Name</label>
-            <input type="text" class="form-control" id="lastname" 
-            formControlName="lastname">
+            <input type="text" class="form-control" id="lastname" placeholder=" Enter your LastName"    formControlName="lastname">
 
-            <div class="form-text text-danger"
-             *ngIf="LastName.errors?.['required']
+            <div class="form-text text-danger" *ngIf="LastName.errors?.['required']
             && (LastName.dirty || LastName.touched)">
-        Last Name is Required.
-    </div>
-    <div class="form-text text-danger" *ngIf="LastName.errors?.['minlength']
+                Last Name is Required.
+            </div>
+            <div class="form-text text-danger" *ngIf="LastName.errors?.['minlength']
             && (LastName.dirty|| LastName.touched)">
-        Last Name is too short.Atleast 2 characters
-    </div>
+                Last Name is too short.Atleast 2 characters
+            </div>
 
-    <div class="form-text text-danger" *ngIf="LastName.errors?.['pattern']
+            <div class="form-text text-danger" *ngIf="LastName.errors?.['pattern']
             && (LastName.dirty|| LastName.touched)">
-        Name should start with an alphabet
-    </div>  
+                Name should start with an alphabet
+            </div>
         </div>
     </div>
     <div class="row">
-    <div class="col mb-3">
-        <label for="email" class="form-label">Email Address</label>
-        <input type="email" class="form-control" id="email" formControlname="email"
-        formControlName="email">
-        <div class="form-text text-danger" *ngIf="Email.errors?.['required']
+        <div class="col mb-3">
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" class="form-control" id="email"   placeholder=" Enter your Email id"  formControlname="email" formControlName="email">
+            <div class="form-text text-danger" *ngIf="Email.errors?.['required']
         && (Email.dirty || Email.touched)">
-    Email is Required.
-</div>
-<div class="form-text text-danger" *ngIf="Email.errors?.['pattern'] && Email.invalid
+                Email is Required.
+            </div>
+            <div class="form-text text-danger" *ngIf="Email.errors?.['pattern'] && Email.invalid
     && (Email.dirty || Email.touched)">
-   Email is Invalid
-</div>
-</div>
-</div>
+                Email is Invalid
+            </div>
+        </div>
+    </div>
     <div class="col mb-3">
         <label for="mobile" class="form-label">Mobile Number</label>
-        <input type="text" class="form-control" id="mobile" formControlName="mobile"> 
+        <input type="text" class="form-control" id="mobile"  placeholder=" Enter your Mobileno" formControlName="mobile">
 
         <div class="form-text text-danger" *ngIf="Mobile.errors?.['required']
         && (Mobile.dirty || Mobile.touched)">
-    Number is required.
-</div>
-<div class="form-text text-danger" *ngIf="Mobile.errors?.['pattern']
+            Number is required.
+        </div>
+        <div class="form-text text-danger" *ngIf="Mobile.errors?.['pattern']
         && (Mobile.touched || Mobile.dirty)">
-   Number is Invalid
-</div>
+            Number is Invalid
+        </div>
 
-<div class="form-text text-danger" *ngIf="Mobile.errors?.['minlength']
+        <div class="form-text text-danger" *ngIf="Mobile.errors?.['minlength']
         && (Mobile.touched || Mobile.dirty)">
-   Number is Short
-</div>
+            Number is Short
+        </div>
 
-<div class="form-text text-danger" *ngIf="Mobile.errors?.['maxlength']
+        <div class="form-text text-danger" *ngIf="Mobile.errors?.['maxlength']
         && (Mobile.touched || Mobile.dirty)">
-   Number is Long
-</div>
+            Number is Long
+        </div>
     </div>
     <div class="row">
-    <div class="col mb-3">
-        <label for="pwd" class="form-label">Password</label>
-        <input type="password" class="form-control" id="Pwd" formControlName="pwd"> 
-        <div class="form-text text-danger"  *ngIf="PWD.errors?.['required'] && ( PWD.dirty || PWD.touched)">
-            Password is required.
+        <div class="col mb-3">
+            <label for="pwd" class="form-label">Password</label>
+            <input type="password" class="form-control" id="Pwd" placeholder=" Enter your Password"  formControlName="pwd">
+            <div class="form-text text-danger" *ngIf="PWD.errors?.['required'] && ( PWD.dirty || PWD.touched)">
+                Password is required.
+            </div>
+            <div class="form-text text-danger"
+                *ngIf="PWD.errors?.['minlength'] &&  PWD.errors?.['minlength']  && ( PWD.dirty || PWD.touched)">
+                Password should be at least 6 and at the max 15 characters long.
+            </div>
         </div>
-        <div class="form-text text-danger"  *ngIf="PWD.errors?.['minlength'] &&  PWD.errors?.['minlength']  && ( PWD.dirty || PWD.touched)">
-            Password should be at least 6 and at the max 15 characters long.
-        </div>
-    </div>
-    <div class="col mb-3">
-        <label for="rpwd" class="form-label">Repeat Password</label>
-        <input type="password" class="form-control" id="rPwd" formControlName="rpwd">
-        <div class="form-text text-danger" [ngStyle]="{'display':repeatPass}">
-            repeat pass is Invalid. 
-        <!-- </div> -->
-        <!-- <div class="form-text text-danger" *ngIf="registerForm.controls['rpwd'].value !== registerForm.controls['pwd'].value">
+        <div class="col mb-3">
+            <label for="rpwd" class="form-label">Repeat Password</label>
+            <input type="password" class="form-control" id="rPwd" formControlName="rpwd">
+            <div class="form-text text-danger" [ngStyle]="{'display':repeatPass}">
+                repeat pass is Invalid.
+                <!-- </div> -->
+                <!-- <div class="form-text text-danger" *ngIf="registerForm.controls['rpwd'].value !== registerForm.controls['pwd'].value">
             Passwords do not match.
         </div> -->
-    </div>
-    </div> 
+            </div>
+        </div>
     </div>
     <div class="row">
         <div class="col-6 offset-3">
             <div class="d-grid">
-                <button  type="submit" class="btn btn-primary"  [disabled]="registerForm.invalid" >Submit</button>
+                <button type="submit" class="btn btn-primary" [disabled]="registerForm.invalid">Submit</button>
             </div>
         </div>
-        </div>
-        <!--(ngSubmit)="registerSubmited" type="submit" [disabled]="registerForm.invalid" (click)="registerSubmited()" -->
+    </div>
+   
+    <!--(ngSubmit)="registerSubmited" type="submit" [disabled]="registerForm.invalid" (click)="registerSubmited()" -->
 </form>
