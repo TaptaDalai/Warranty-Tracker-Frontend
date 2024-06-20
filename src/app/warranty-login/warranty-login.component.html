@@ -1,16 +1,16 @@
 <div class="example">
     <div class="container border p-3 rounded-3">
           <h1 style="text-align: center;">Welcome To Warranty Application</h1>
-          <h3>Enter your login credentials</h3>
+          <h5>Enter your login credentials</h5>
           <form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
                 <input type="text" formControlName="email" placeholder="Username" required>
-                <span class="error-msg" *ngIf="reactiveForm.get('email')?.errors?.['required'] && reactiveForm.get('email')?.touched" >Email is required!</span>
-                <span class="error-msg" *ngIf="reactiveForm.get('email')?.errors?.['pattern']" >Invalid Email!</span>
+                <span class="error-msg text-danger" *ngIf="reactiveForm.get('email')?.errors?.['required'] && reactiveForm.get('email')?.touched" >Email is required!</span>
+                <span class="error-msg text-danger" *ngIf="reactiveForm.get('email')?.errors?.['pattern']" >Invalid Email!</span>
                 
          
                 <input type="password" formControlName="Password" placeholder="Password" required>
-                <span class="error-msg" *ngIf="reactiveForm.get('Password')?.errors?.['required'] && reactiveForm.get('Password')?.touched" >Password is required!</span>
-               <span class="error-msg" *ngIf="reactiveForm.get('Password')?.errors?.['maxlength']">Password should be less than 8 characters!</span>
+                <span class="error-msg text-danger" *ngIf="reactiveForm.get('Password')?.errors?.['required'] && reactiveForm.get('Password')?.touched" >Password is required!</span>
+               <span class="error-msg text-danger" *ngIf="reactiveForm.get('Password')?.errors?.['maxlength']">Password should be less than 8 characters!</span>
                 <button class="btn btn-info custom-btn" type="submit">Login</button>
           </form>
           <p>Not registered?
