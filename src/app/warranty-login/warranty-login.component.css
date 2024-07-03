@@ -39,9 +39,9 @@
    
  
 }
-h1{
+/* h1{
     color: #f0f4f0;
-}
+} */
 label{
     display: block;
     margin-top: 10px;
@@ -75,4 +75,14 @@ button{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+/* .toast-success{
+    background-color: #28a745;
+    color: white !important;
+} */
+.custom-success-toast{
+    background-color:pink !important;
+    color: black !important;
+    border: none;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }

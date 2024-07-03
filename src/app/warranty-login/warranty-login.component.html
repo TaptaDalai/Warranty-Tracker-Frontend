@@ -1,17 +1,25 @@
 <div class="example">
     <div class="container border p-3 rounded-3">
-          <h1 style="text-align: center;">Welcome To Warranty Application</h1>
-          <h5>Enter your login credentials</h5>
+      <div class="col text center p-2 mb-3 bg-light">
+            <h1 style="text-align: center;"><b>Welcome To Warranty Application</b></h1>
+            
+      </div>
+      <h5 style="text-align: center;">Enter your login credentials</h5>
+      
           <form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
-                <input type="text" formControlName="email" placeholder="Username" required>
+            <div class="form-group">
+                <input type="text" formControlName="email" placeholder="Username" class="form-control" required>
                 <span class="error-msg text-danger" *ngIf="reactiveForm.get('email')?.errors?.['required'] && reactiveForm.get('email')?.touched" >Email is required!</span>
                 <span class="error-msg text-danger" *ngIf="reactiveForm.get('email')?.errors?.['pattern']" >Invalid Email!</span>
                 
-         
-                <input type="password" formControlName="Password" placeholder="Password" required>
+            </div>
+            <div class="form-group">
+                <input type="password" formControlName="Password" placeholder="Password" class="form-control" required>
                 <span class="error-msg text-danger" *ngIf="reactiveForm.get('Password')?.errors?.['required'] && reactiveForm.get('Password')?.touched" >Password is required!</span>
                <span class="error-msg text-danger" *ngIf="reactiveForm.get('Password')?.errors?.['maxlength']">Password should be less than 8 characters!</span>
-                <button class="btn btn-info custom-btn" type="submit">Login</button>
+                
+            </div>   
+            <button class="btn btn-info custom-btn" type="submit">Login</button> 
           </form>
           <p>Don't have an account?
                 <a href="register"
