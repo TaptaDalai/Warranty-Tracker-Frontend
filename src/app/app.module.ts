@@ -12,6 +12,7 @@ import { FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 
 import { RegisterComponent } from './components/register/register.component';
 import { WarrantyLoginComponent } from './warranty-login/warranty-login.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { WarrantyLoginComponent } from './warranty-login/warranty-login.componen
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     
   ],
   providers: [
