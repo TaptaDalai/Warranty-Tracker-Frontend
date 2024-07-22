@@ -1,0 +1,114 @@
+<div class="container mt-4">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary mb-4">
+        <a class="navbar-brand" href="#">Warranty Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Logout</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Profile</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="d-flex justify-content-center mb-4">
+    <div class="card  mb-5 bg-secondary" style="width: 30rem" >
+        <div class="card-header bg-danger text-white" >
+            <h2 class="h5 mb-0">Add Product Details</h2>
+        </div>
+        <div class="card-body" style="align-items:center">
+            <form [formGroup]="productForm" (ngSubmit)="addProduct()">
+                <div class="form-row">
+                    <div class="form-group ">
+                        <label for="id">Product ID:</label>
+                        <input type="text" id="id" class="form-control" formControlName="id" required>
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <label for="userMail">User Email:</label>
+                    <input type="email" id="userMail" class="form-control" formControlName="userMail" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group ">
+                    <label for="productName">Product Name:</label>
+                    <input type="text" id="productName" class="form-control" formControlName="productName" required>
+                </div>
+                </div>
+                <div class="form-group ">
+                    <label for="brand">Brand:</label>
+                    <input type="text" id="brand" class="form-control" formControlName="brand" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                    <label for="purchaseDate">Purchase Date:</label>
+                    <input type="date" id="purchaseDate" class="form-control" formControlName="purchaseDate" required>
+                </div>
+                </div>
+                <div class="form-group ">
+                    <label for="notifyBefore">Notify Before (days):</label>
+                    <input type="number" id="notifyBefore" class="form-control" formControlName="notifyBefore" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group ">
+                    <label for="expiresDate">Expires Date:</label>
+                    <input type="date" id="expiresDate" class="form-control" formControlName="expiresDate" required>
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <label for="description">Description:</label>
+                    <textarea id="description" class="form-control" formControlName="description" required></textarea>
+                </div>
+                <div class="form-group  mb-4">
+                    <label for="link">Link:</label>
+                    <input type="url" id="link" class="form-control" formControlName="link" required>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    {{ editIndex === null ? 'Add Product' : 'Update Product' }}</button>
+            </form>
+        </div>
+    </div>
+    </div>
+    <div class="card">
+        <div class="card-header bg-danger">
+            <h2 class="h5 mb-0">Product List</h2>
+        </div>
+        <div class="card-body">
+            <table class="table table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Product ID</th>
+                        <th>Product Name</th>
+                        <th>Expiry Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product of products; let i = index">
+                        <td>{{ product.id }}</td>
+                        <td>{{ product.productName }}</td>
+                        <td>{{ product.expiresDate }}</td>
+                        <td> 
+                            <button class="btn btn-sm btn-warning mr-2" (click)="editProduct(i)" style="margin-right:10px">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="btn btn-sm btn-danger" (click)="deleteProduct(i)">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div *ngIf="products.length === 0" class="text-center text-muted">
+                No products were added.
+            </div>
+        </div>
+    </div>
+</div>
+    

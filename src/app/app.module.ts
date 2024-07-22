@@ -8,18 +8,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 
-import { FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormsModule, NgForm, ReactiveFormsModule, Validators } from '@angular/forms';
 
 import { RegisterComponent } from './components/register/register.component';
 import { WarrantyLoginComponent } from './warranty-login/warranty-login.component';
 import { HttpClientModule } from '@angular/common/http';
+import { WarrantyHomeComponent } from './warranty-home/warranty-home.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
-    WarrantyLoginComponent
+    WarrantyLoginComponent,
+    WarrantyHomeComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -32,6 +34,7 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    
     
   ],
   providers: [

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-warranty-login',
@@ -31,7 +32,7 @@ export class WarrantyLoginComponent implements OnInit {
     }else{
       this.toastr.error('Please fill out the form correctly','Error');
     }
-    this.toastr.success('Login Successful', 'Success')
+    // this.toastr.success('Login Successful', 'Success')
   }
   
 

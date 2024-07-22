@@ -1,6 +1,7 @@
 form{
     width:500px;
     background-color: rgb(145, 157, 211);
+    
 }
 
 /* .text-center{
@@ -9,5 +10,11 @@ form{
         width: 80%; 
         align-items: left;
 } */
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
 
 

@@ -6,7 +6,7 @@
       </div>
       <h5 style="text-align: center;">Enter your login credentials</h5>
       
-          <form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
+          <form #loginForm="ngForm" [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
             <div class="form-group">
                 <input type="text" formControlName="email" placeholder="Username" class="form-control" required>
                 <span class="error-msg text-danger" *ngIf="reactiveForm.get('email')?.errors?.['required'] && reactiveForm.get('email')?.touched" >Email is required!</span>
@@ -19,7 +19,7 @@
                <span class="error-msg text-danger" *ngIf="reactiveForm.get('Password')?.errors?.['maxlength']">Password should be less than 8 characters!</span>
                 
             </div>   
-            <button class="btn btn-info custom-btn" type="submit">Login</button> 
+            <button class="btn btn-info custom-btn" type="submit" [disabled]="loginForm.invalid">Login</button> 
           </form>
           <p>Don't have an account?
                 <a href="register"
